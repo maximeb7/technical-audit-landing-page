@@ -1,0 +1,34 @@
+---
+const LOGO_SNFC = '/logos/sncf.svg';
+const LOGO_RODEO = '/logos/rodeo.svg';
+const LOGO_SUIVID = '/logos/suivideflotte.svg';
+---
+<section class="bg-white rounded-lg p-6 shadow">
+  <h3 class="text-xl font-semibold">Quelques projets récents</h3>
+
+  <div class="mt-6 flex items-start gap-6 flex-wrap">
+    <div class="flex items-center gap-3">
+      <img src={LOGO_SNFC} alt="SNCF" class="w-28 object-contain" />
+      <div>
+        <p class="font-medium">SNCF</p>
+        <p class="text-sm text-slate-600">Refonte d’une application interne — amélioration fiabilité & perf.</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <img src={LOGO_RODEO} alt="Rodeeo" class="w-24 object-contain" />
+      <div>
+        <p class="font-medium">Rodeeo</p>
+        <p class="text-sm text-slate-600">Développement d’une plateforme SaaS de réservation.</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <img src={LOGO_SUIVID} alt="SuiviDeFlotte" class="w-24 object-contain" />
+      <div>
+        <p class="font-medium">SuiviDeFlotte</p>
+        <p class="text-sm text-slate-600">Microservices & intégrations télésurveillance.</p>
+      </div>
+    </div>
+  </div>
+</section>

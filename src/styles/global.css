@@ -4,6 +4,9 @@
 
 :root {
   color-scheme: dark;
+  --color-brand-dark: #213072;
+  --color-brand-primary: #3170FF; /* ou #5170FF si tu préfères */
+  --color-brand-light: #85a8ff;
 }
 
 body {

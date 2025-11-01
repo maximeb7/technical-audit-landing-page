@@ -1,10 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Astro/Hero.astro';
-import Frameworks from '../components/Astro/Frameworks.astro';
----
+import Services from '../components/Astro/Services.astro';
+import Process from '../components/Astro/Process.astro';
+import Proofs from '../components/Astro/Proofs.astro';
+import FAQ from '../components/Astro/FAQ.astro';
+import CTASection from '../components/Astro/CTASection.astro';
 
-<Layout title="Astro">
-	<Hero />
-	<Frameworks />
-</Layout>
+const meta = {
+  title: 'Audit technique express — 1 jour | Maxime Bouger',
+  description: "Audit technique express (1 jour) pour SaaS, startups et PME : rapport synthétique, 3 quick wins actionnables et plan 30 jours. Réservez votre diagnostic rapide.",
+  ogImage: '/og-image.png'
+};
+---
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:image" content={meta.ogImage} />
+  </head>
+  <body class="antialiased text-slate-800">
+    <Layout>
+      <Hero />
+      <main class="max-w-5xl mx-auto px-6 md:px-8">
+        <section class="mt-12">
+          <Services />
+        </section>
+
+        <section class="mt-10">
+          <Process />
+        </section>
+
+        <section class="mt-10">
+          <Proofs />
+        </section>
+
+        <section class="mt-10">
+          <FAQ />
+        </section>
+
+        <section class="mt-12">
+          <CTASection />
+        </section>
+      </main>
+    </Layout>
+  </body>
+</html>

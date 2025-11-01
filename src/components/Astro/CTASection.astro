@@ -1,0 +1,21 @@
+---
+const EMAIL = 'maximebouger.freelance@gmail.com';
+const CALENDLY = 'CALENDLY_LINK';
+---
+<section class="bg-white rounded-lg p-6 shadow text-center">
+  <h3 class="text-2xl font-semibold">Prêt à diagnostiquer vos freins techniques ?</h3>
+  <p class="mt-2 text-slate-600">Audit express 1j — rapport synthétique + 3 quick wins.</p>
+
+  <div class="mt-6 flex justify-center gap-3">
+    <button
+      class="bg-sky-600 text-white px-5 py-3 rounded-md"
+      onclick={`Calendly.initPopupWidget({url:'https://calendly.com/${CALENDLY}'});return false;`}
+    >
+      Réserver un créneau
+    </button>
+
+    <a class="px-4 py-3 rounded-md border" href={`mailto:${EMAIL}`}>
+      Me contacter
+    </a>
+  </div>
+</section>

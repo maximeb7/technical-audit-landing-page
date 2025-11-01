@@ -1,0 +1,15 @@
+---
+const EMAIL = 'maximebouger.freelance@gmail.com';
+---
+<footer class="mt-12 py-8 text-center text-sm text-slate-500">
+  <p>© {new Date().getFullYear()} Maxime Bouger — Développeur Full‑Stack & consultant technique</p>
+  <p class="mt-2"><a href={`mailto:${EMAIL}`} class="underline">{EMAIL}</a></p>
+  <form action="https://formspree.io/f/FORMSPREE_ID" method="POST" class="space-y-2">
+  <input name="name" placeholder="Nom" required class="w-full px-3 py-2 border rounded" />
+  <input name="email" type="email" placeholder="Email" required class="w-full px-3 py-2 border rounded" />
+  <input name="company" placeholder="Société" class="w-full px-3 py-2 border rounded" />
+  <textarea name="message" placeholder="Enjeux (ex: perf, incidents, scalabilité)" class="w-full px-3 py-2 border rounded"></textarea>
+  <button type="submit" class="bg-sky-600 text-white px-4 py-2 rounded">Demander un diagnostic</button>
+</form>
+
+</footer>
