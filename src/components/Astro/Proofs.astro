@@ -1,33 +1,33 @@
 ---
-const LOGO_SNFC = '/logos/sncf.svg';
-const LOGO_RODEO = '/logos/rodeo.svg';
+const LOGO_SNFC = "/logo_sncf.png";
+const LOGO_RODEO = "/rodeeo_logo.png";
 const LOGO_SUIVID = '/logos/suivideflotte.svg';
 ---
-<section class="bg-white rounded-lg p-6 shadow">
-  <h3 class="text-xl font-semibold">Quelques projets récents</h3>
+<section class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/50 hover:border-blue-500/50 transition-colors duration-300">
+  <h3 class="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-300 to-blue-100 bg-clip-text text-transparent animate-gradient-x whitespace-pre-linefont-semibold">Quelques projets récents</h3>
 
-  <div class="mt-6 flex items-start gap-6 flex-wrap">
-    <div class="flex items-center gap-3">
+  <div class="mt-6 flex flex-col items-start gap-6 flex-wrap">
+    <div class="flex items-center gap-3 mb-3">
       <img src={LOGO_SNFC} alt="SNCF" class="w-28 object-contain" />
       <div>
-        <p class="font-medium">SNCF</p>
-        <p class="text-sm text-slate-600">Refonte d’une application interne — amélioration fiabilité & perf.</p>
+        <p class="text-white font-bold ">SNCF</p>
+        <p class="text-sm text-slate-200">Refonte d’une application interne — amélioration fiabilité & perf.</p>
       </div>
     </div>
 
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3 mb-3">
       <img src={LOGO_RODEO} alt="Rodeeo" class="w-24 object-contain" />
       <div>
-        <p class="font-medium">Rodeeo</p>
-        <p class="text-sm text-slate-600">Développement d’une plateforme SaaS de réservation.</p>
+        <p class="font-medium text-white">Rodeeo</p>
+        <p class="text-sm text-slate-200">Développement d’une plateforme SaaS de réservation.</p>
       </div>
     </div>
 
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3 mb-3">
       <img src={LOGO_SUIVID} alt="SuiviDeFlotte" class="w-24 object-contain" />
       <div>
-        <p class="font-medium">SuiviDeFlotte</p>
-        <p class="text-sm text-slate-600">Microservices & intégrations télésurveillance.</p>
+        <p class="font-medium text-white">SuiviDeFlotte</p>
+        <p class="text-sm text-slate-200">Microservices & intégrations télésurveillance.</p>
       </div>
     </div>
   </div>

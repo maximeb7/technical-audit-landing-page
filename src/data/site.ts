@@ -8,7 +8,7 @@ export const home = {
   subtitle: "👋 Bonjour, moi c’est Maxime — Développeur Full‑Stack & consultant technique",
   title: "Audit technique express — 1 jour",
   description:
-    "Audit technique express (1 jour) pour SaaS, startups et PME : diagnostic opérationnel, rapport synthétique, 3 quick wins actionnables et plan 30 jours. Idéal pour lever les freins techniques rapidement et prioriser les actions à fort impact.",
+    "Audit technique express (1 jour) pour SaaS, startups et PME : diagnostic opérationnel, rapport synthétique, 3 quick wins actionnables et plan 30 jours.Idéal pour lever les freins techniques rapidement et prioriser les actions à fort impact.",
   features: [
     {
       title: "Diagnostic rapide",
