@@ -1,11 +1,60 @@
 ---
----
-<section class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/50 hover:border-blue-500/50 transition-colors duration-300">
-  <h3 class="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-300 to-blue-100 bg-clip-text text-transparent animate-gradient-x whitespace-pre-linefont-semibold">Process en 4 étapes</h3>
-  <ol class="mt-4 space-y-3 list-decimal list-inside text-slate-700">
-    <li class="text-gray-200 "><strong>Réservation</strong> — bloquez un créneau (Calendly).</li>
-    <li class="text-gray-200 "><strong>Brief & accès</strong> — entretien 20 min pour cadrer le périmètre.</li>
-    <li class="text-gray-200 "><strong>Audit 1j</strong> — revue technique : code, CI/CD, monitoring, infra.</li>
-    <li class="text-gray-200 "><strong>Restitution</strong> — rapport synthétique + réunion de 30 min / Q&A.</li>
-  </ol>
+
+import {home} from "../../data/site.ts";---
+
+<section class=" rounded-lg p-6 shadow">
+    <h3 class="text-5xl font-bold bg-gradient-to-r from-blue-400 via-blue-300 to-blue-100 bg-clip-text text-transparent animate-gradient-x whitespace-pre-linefont-semibold">Process en 4 étapes</h3>
+    <div class="cursor-default grid md:grid-cols-2 gap-8 max-w-6xl max-h-5xl mx-auto mt-16 opacity-3 animate-fade-up animation-delay-200">
+
+        <div class="bg-gray-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/50 hover:border-blue-500/50 transition-colors duration-300 h-100 text-center ">
+            <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 to-blue-400 text-white">
+                <!-- Calendar icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                    <path d="M16 3v4M8 3v4"></path>
+                    <path d="M3 11h18"></path>
+                </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-white mb-2">1- Réservation</h3>
+            <p class="text-gray-200 text-lg">Bloquez un créneau (Calendly).</p>
+        </div>
+
+        <div style="height: 250px !important" class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/50 hover:border-blue-500/50 transition-colors duration-300 h-100 text-center">
+            <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 to-blue-400 text-white">
+                <!-- User / Brief icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-white mb-2">2- Brief & accès</h3>
+            <p class="text-gray-200 text-lg">Entretien 20 min pour cadrer le périmètre.</p>
+        </div>
+
+        <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/50 hover:border-blue-500/50 transition-colors duration-300 h-100 text-center">
+            <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 to-blue-400 text-white">
+                <!-- Code / Audit icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="16 18 9 12 16 6"></polyline>
+                    <polyline points="8 6 15 12 8 18"></polyline>
+                </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-white mb-2">3- Audit 1j</h3>
+            <p class="text-gray-200 text-lg">Revue technique : code, CI/CD, monitoring, infra.</p>
+        </div>
+
+        <div style="height: 250px !important" class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/50 hover:border-blue-500/50 transition-colors duration-300 h-100 text-center">
+            <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 to-blue-400 text-white">
+                <!-- Document / Restitution icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+                    <path d="M14 2v6h6"></path>
+                </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-white mb-2">4- Restitution</h3>
+            <p class="text-gray-200 text-lg">Rapport synthétique + réunion de 30 min / Q&A.</p>
+        </div>
+
+    </div>
 </section>
+

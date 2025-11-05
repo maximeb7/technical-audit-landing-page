@@ -3,32 +3,39 @@ const LOGO_SNFC = "/logo_sncf.png";
 const LOGO_RODEO = "/rodeeo_logo.png";
 const LOGO_SUIVID = '/logos/suivideflotte.svg';
 ---
-<section class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/50 hover:border-blue-500/50 transition-colors duration-300">
-  <h3 class="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-300 to-blue-100 bg-clip-text text-transparent animate-gradient-x whitespace-pre-linefont-semibold">Quelques projets récents</h3>
+<section class="rounded-lg p-6 shadow">
+    <h3 class="text-5xl font-bold bg-gradient-to-r from-blue-400 via-blue-300 to-blue-100 bg-clip-text text-transparent animate-gradient-x whitespace-pre-line font-semibold">
+        Quelques projets récents
+    </h3>
 
-  <div class="mt-6 flex flex-col items-start gap-6 flex-wrap">
-    <div class="flex items-center gap-3 mb-3">
-      <img src={LOGO_SNFC} alt="SNCF" class="w-28 object-contain" />
-      <div>
-        <p class="text-white font-bold ">SNCF</p>
-        <p class="text-sm text-slate-200">Refonte d’une application interne — amélioration fiabilité & perf.</p>
-      </div>
-    </div>
+    <div class="cursor-default grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16 opacity-3 animate-fade-up animation-delay-200">
 
-    <div class="flex items-center gap-3 mb-3">
-      <img src={LOGO_RODEO} alt="Rodeeo" class="w-24 object-contain" />
-      <div>
-        <p class="font-medium text-white">Rodeeo</p>
-        <p class="text-sm text-slate-200">Développement d’une plateforme SaaS de réservation.</p>
-      </div>
-    </div>
+        <!-- SNCF -->
+        <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/50 hover:border-blue-500/50 transition-colors duration-300 text-center">
+            <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 to-blue-400">
+                <img src={LOGO_SNFC} alt="SNCF" class="w-12 object-contain" />
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">SNCF</h3>
+            <p class="text-gray-200 text-lg">Refonte d’une application interne — amélioration fiabilité & perf.</p>
+        </div>
 
-    <div class="flex items-center gap-3 mb-3">
-      <img src={LOGO_SUIVID} alt="SuiviDeFlotte" class="w-24 object-contain" />
-      <div>
-        <p class="font-medium text-white">SuiviDeFlotte</p>
-        <p class="text-sm text-slate-200">Microservices & intégrations télésurveillance.</p>
-      </div>
+        <!-- Rodeeo -->
+        <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/50 hover:border-blue-500/50 transition-colors duration-300 text-center">
+            <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-blue-500 to-cyan-400">
+                <img src={LOGO_RODEO} alt="Rodeeo" class="w-12 object-contain" />
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Rodeeo</h3>
+            <p class="text-gray-200 text-lg">Développement d’une plateforme SaaS de réservation.</p>
+        </div>
+
+        <!-- SuiviDeFlotte -->
+        <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/50 hover:border-blue-500/50 transition-colors duration-300 text-center">
+            <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-purple-900 to-purple-600">
+                <img src={LOGO_SUIVID} alt="SuiviDeFlotte" class="w-12 object-contain" />
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">SuiviDeFlotte</h3>
+            <p class="text-gray-200 text-lg">Développement et refonte de SaaS / Microservices / intégrations télésurveillance.</p>
+        </div>
+
     </div>
-  </div>
 </section>
