@@ -27,7 +27,9 @@ const stars = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${REPO_NA
             <div></div>
             
             {/* Navigation Links */}
-            <div class="bg-gray-900/50 backdrop-blur-md px-2 lg:px-3 xl:px-6 py-2 lg:py-2.5 rounded-full border border-gray-800/50">
+            <div
+                    class="bg-gray-900/40 backdrop-blur-md px-6 py-3 rounded-md border border-gray-800/40 shadow-md flex items-center gap-6 transition-all duration-300"
+            >
                 {frameworks.map((framework, index) => (
                     <>
                         {index !== 0 && <span class="mx-1.5 lg:mx-2 xl:mx-4 text-gray-600">|</span>}
@@ -56,155 +58,80 @@ const stars = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${REPO_NA
         </div>
 
         {/* Mobile Navigation */}
-        <div class="lg:hidden flex justify-between items-center">
+        <div class="lg:hidden flex justify-between items-center px-4 py-3">
+            <!-- Bouton hamburger -->
             <button
-                id="mobile-menu-button"
-                class="p-2 text-gray-400 hover:text-white"
-                aria-label="Toggle Menu"
+                    id="mobile-menu-button"
+                    class="p-2 text-gray-300 hover:text-white focus:outline-none"
+                    aria-label="Ouvrir le menu"
             >
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
 
-            <div 
-                id="mobile-menu" 
-                class="hidden fixed inset-0 bg-gray-900/95 backdrop-blur-md"
-                style="z-index: 100;"
+            <!-- Menu mobile -->
+            <div
+                    id="mobile-menu"
+                    class="hidden fixed inset-0 bg-gray-950/70 backdrop-blur-md flex flex-col items-center justify-center gap-6 transition-all duration-300"
+                    style="z-index: 100;"
             >
-                <div class="container mx-auto px-4 py-8">
-                    <div class="flex justify-end">
-                        <button
-                            id="mobile-menu-close"
-                            class="p-2 text-gray-400 hover:text-white"
-                            aria-label="Close Menu"
+                <!-- Bouton fermeture -->
+                <button
+                        id="mobile-menu-close"
+                        class="absolute top-6 right-6 p-2 text-gray-400 hover:text-white"
+                        aria-label="Fermer le menu"
+                >
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Liens -->
+                {frameworks.map(framework => (
+                        <a
+                                href={framework.path}
+                                onClick={`scrollToSection(event, '${framework.path}')`}
+                                class="text-lg text-gray-200 hover:text-white transition-colors duration-200"
                         >
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-                    <nav class="mt-8 flex flex-col gap-4">
-                        {frameworks.map(framework => (
-                                <a href={framework.path} onClick="scrollToSection(event, '{framework.path}')">
-
-                                class:list={[
-                                    'px-4 py-2 rounded-lg transition-all duration-200',
-                                    isActivePath(framework.path)
-                                        ? 'bg-gray-800 text-white'
-                                        : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
-                                ]}
-                            >
-                                {framework.displayName}
-                                {isActivePath(framework.path) && (
-                                    <span 
-                                        class="block h-[2px] mt-1 w-12"
-                                        style={`background-color: ${framework.color}`}
-                                    />
-                                )}
-                            </a>
-                        ))}
-
-
-                    </nav>
-                </div>
+                            {framework.displayName}
+                        </a>
+                ))}
             </div>
         </div>
+
     </nav>
 </header>
 
 <script>
-    function scrollToSection(event, selector) {
-        if (!selector.startsWith('#')) return;
-        event.preventDefault();
-        const target = document.querySelector(selector);
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-            history.replaceState(null, '', selector); // met à jour l'URL
-        }
-    }
-    function setupMobileMenu() {
-        const button = document.getElementById('mobile-menu-button');
-        const closeButton = document.getElementById('mobile-menu-close');
+    document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('mobile-menu-button');
+        const closeBtn = document.getElementById('mobile-menu-close');
         const menu = document.getElementById('mobile-menu');
         const body = document.body;
 
-        if (!button || !closeButton || !menu || !button.parentNode || !closeButton.parentNode) {
-            console.warn('Mobile menu elements not found');
-            return;
-        }
-
-        // Create new buttons with event listeners
-        const newButton = button.cloneNode(true) as HTMLButtonElement;
-        const newCloseButton = closeButton.cloneNode(true) as HTMLButtonElement;
-
-        const toggleMenu = () => {
-            menu.classList.toggle('hidden');
-            body.style.overflow = menu.classList.contains('hidden') ? '' : 'hidden';
-        };
-
-        // Add event listeners to new buttons
-        newButton.addEventListener('click', toggleMenu);
-        newCloseButton.addEventListener('click', toggleMenu);
-
-        // Replace old buttons with new ones
-        button.parentNode.replaceChild(newButton, button);
-        closeButton.parentNode.replaceChild(newCloseButton, closeButton);
-
-        // Close menu when clicking outside
-        const handleOutsideClick = (e: MouseEvent) => {
-            const target = e.target as HTMLElement;
-            if (target === menu) {
-                toggleMenu();
+        const toggleMenu = (show) => {
+            if (!menu) return;
+            if (show) {
+                menu.classList.remove('hidden');
+                body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('hidden');
+                body.style.overflow = '';
             }
         };
-        menu.addEventListener('click', handleOutsideClick);
 
-        // Close menu on escape key
-        const handleEscKey = (e: KeyboardEvent) => {
-            if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
-                toggleMenu();
-            }
-        };
-        document.addEventListener('keydown', handleEscKey);
+        openBtn?.addEventListener('click', () => toggleMenu(true));
+        closeBtn?.addEventListener('click', () => toggleMenu(false));
 
-        // Cleanup function
-        return () => {
-            menu.removeEventListener('click', handleOutsideClick);
-            document.removeEventListener('keydown', handleEscKey);
-        };
-    }
-
-    let cleanup: (() => void) | undefined;
-
-    // Run setup immediately if document is already loaded
-    if (document.readyState === 'complete') {
-        cleanup = setupMobileMenu();
-    } else {
-        // Otherwise wait for DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', () => {
-            cleanup = setupMobileMenu();
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
         });
-    }
-    
-    // Setup after each navigation with View Transitions
-    document.addEventListener('astro:page-load', () => {
-        if (cleanup) {
-            cleanup();
-        }
-        cleanup = setupMobileMenu();
-    });
-    
-    // Cleanup when leaving page
-    document.addEventListener('astro:before-swap', () => {
-        if (cleanup) {
-            cleanup();
-        }
-        const menu = document.getElementById('mobile-menu');
-        const body = document.body;
-        if (menu && !menu.classList.contains('hidden')) {
-            menu.classList.add('hidden');
-            body.style.overflow = '';
-        }
+
+        // Fermer avec la touche Échap
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') toggleMenu(false);
+        });
     });
 </script>
