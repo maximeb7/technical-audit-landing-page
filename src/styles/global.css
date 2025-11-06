@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: dark;
-  --color-brand-dark: #213072;
-  --color-brand-primary: #3170FF; /* ou #5170FF si tu préfères */
+  --color-brand-dark: #3b58d2;
+  --color-brand-primary: #4a7ffc; /* ou #5170FF si tu préfères */
   --color-brand-light: #85a8ff;
 }
 
