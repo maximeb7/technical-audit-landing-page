@@ -86,8 +86,8 @@ const stars = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${REPO_NA
                     </div>
                     <nav class="mt-8 flex flex-col gap-4">
                         {frameworks.map(framework => (
-                            <a
-                                href={framework.path}
+                                <a href={framework.path} onClick="scrollToSection(event, '{framework.path}')">
+
                                 class:list={[
                                     'px-4 py-2 rounded-lg transition-all duration-200',
                                     isActivePath(framework.path)
@@ -114,6 +114,15 @@ const stars = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${REPO_NA
 </header>
 
 <script>
+    function scrollToSection(event, selector) {
+        if (!selector.startsWith('#')) return;
+        event.preventDefault();
+        const target = document.querySelector(selector);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            history.replaceState(null, '', selector); // met à jour l'URL
+        }
+    }
     function setupMobileMenu() {
         const button = document.getElementById('mobile-menu-button');
         const closeButton = document.getElementById('mobile-menu-close');
