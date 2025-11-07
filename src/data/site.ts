@@ -12,15 +12,15 @@ export const home = {
   features: [
     {
       title: "Diagnostic rapide",
-      description: "Entretien de cadrage et revue ciblée du code & infra pour identifier les freins immédiats.",
+      description: "Entretien de cadrage + revue ciblée du code & de l'infra.",
     },
     {
       title: "Actions concrètes",
-      description: "3 quick‑wins actionnables et priorisation pour impact mesurable à court terme.",
+      description: "3 quick‑wins priorisés par impact & faisabilité",
     },
     {
-      title: "Restitution claire",
-      description: "Rapport synthétique + réunion de restitution de 30 min pour passer à l’action.",
+      title: "Restitution opérationnelle",
+      description: "Rapport synthétique + réunion 30 min pour passer à l'action",
     },
   ],
   stats: [
