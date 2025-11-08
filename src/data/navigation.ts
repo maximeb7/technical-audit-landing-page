@@ -11,4 +11,5 @@ export const frameworks: Framework[] = [
     { name: 'Projet récents', displayName: 'Projet récents', path: '#proofs', color: '#323dff'},
     { name: 'FAQ', displayName: 'FAQ', path: '#faq', color: '#323dff' },
     { name: 'Réserver un créneau', displayName: 'Réserver un créneau', path: '#cta', color: '#323dff'},
+    { name: 'Qui suis-je', displayName: 'Qui suis-je', path: '#about-me', color: '#323dff'},
 ];
